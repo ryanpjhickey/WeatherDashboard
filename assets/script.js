@@ -1,4 +1,4 @@
-var api = 'https://api.openweathermap.org/data/2.5/weather?q=peshawar&appid=afafb1b6438a7da06c95113c0745c9ac'
+var api = 'https://api.openweathermap.org/data/2.5/weather?lat=32.7157&lon=-117.1611&appid=afafb1b6438a7da06c95113c0745c9ac'
 
 var searchCity = document.querySelector('#searchCity')
 var searchBtn = document.querySelector('#searchBtn')
