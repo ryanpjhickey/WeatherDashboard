@@ -1,5 +1,4 @@
-var api = 'https://api.openweathermap.org/data/2.5/onecall?lat=38.2492&lon=-122.0405&appid=afafb1b6438a7da06c95113c0745c9ac'
-
+var api = 'https://api.openweathermap.org/data/2.5/onecall?lat=38.2492&lon=-122.0405&appid=fc02d6d30dd32f5567b9706fc1c7ef42'
 var searchCity = document.querySelector('#searchCity')
 var searchBtn = document.querySelector('#searchBtn')
 
