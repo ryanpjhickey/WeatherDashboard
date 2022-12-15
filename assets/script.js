@@ -17,14 +17,17 @@ function callCity() {
     }).then(function (data) {
         console.log(data)
         latlon(data.coord.lat, data.coord.lon)
-        // document.querySelector('#hero').classList.remove("hidden")
     })
 }
 
 function latlon(lat, lon) {
     var coordapi = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIkey}
     `
-    counter++;
+    if (counter < 5) {
+        counter++;
+    }
+    else { counter = 1 }
+    console.log(counter);
     fetch(coordapi).then(function (response) {
         if (response.ok) {
             return response.json();
