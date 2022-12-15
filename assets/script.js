@@ -32,11 +32,11 @@ function latlon(lat, lon) {
         throw response;
     }).then(function (data) {
         console.log(data)
-        var temp1 = ((data.list[0].main.temp - 273.15) * 1.8) + 32;
-        var temp2 = ((data.list[8].main.temp - 273.15) * 1.8) + 32;
-        var temp3 = ((data.list[16].main.temp - 273.15) * 1.8) + 32;
-        var temp4 = ((data.list[24].main.temp - 273.15) * 1.8) + 32;
-        var temp5 = ((data.list[32].main.temp - 273.15) * 1.8) + 32;
+        var temp1 = ((data.list[4].main.temp - 273.15) * 1.8) + 32;
+        var temp2 = ((data.list[12].main.temp - 273.15) * 1.8) + 32;
+        var temp3 = ((data.list[20].main.temp - 273.15) * 1.8) + 32;
+        var temp4 = ((data.list[28].main.temp - 273.15) * 1.8) + 32;
+        var temp5 = ((data.list[36].main.temp - 273.15) * 1.8) + 32;
 
         var string1 = temp1.toFixed(1)
         var string2 = temp2.toFixed(1)
@@ -50,9 +50,22 @@ function latlon(lat, lon) {
 
         document.querySelector(`#hist${counter}`).textContent = CityName
 
-        //if data.list[0].weather[0].main = "Clouds" display cloud
-        //if data.list[0].weather[0].main = "Rain" display rain
-        //if data.list[0].weather[0].main = "Clear" display clear
+        var currWeather1 = data.list[4].weather[0].main
+        var currWeather2 = data.list[12].weather[0].main
+        var currWeather3 = data.list[20].weather[0].main
+        var currWeather4 = data.list[28].weather[0].main
+        var currWeather5 = data.list[36].weather[0].main
+
+        document.querySelector('#weather1').src = `${currWeather1}.jpg`
+        document.querySelector('#weather2').src = `${currWeather2}.jpg`
+        document.querySelector('#weather3').src = `${currWeather3}.jpg`
+        document.querySelector('#weather4').src = `${currWeather4}.jpg`
+        document.querySelector('#weather5').src = `${currWeather5}.jpg`
+
+
+
+        //if data.list[4].weather[0].main = "Rain" display rain
+        //if data.list[4].weather[0].main = "Clear" display clear
 
 
 
@@ -64,30 +77,29 @@ function latlon(lat, lon) {
         document.querySelector('#time4').textContent = string4 + "F";
         document.querySelector('#time5').textContent = string5 + "F";
 
-        document.querySelector('#date1').textContent = data.list[0].dt_txt
-        document.querySelector('#date2').textContent = data.list[8].dt_txt
-        document.querySelector('#date3').textContent = data.list[16].dt_txt
-        document.querySelector('#date4').textContent = data.list[24].dt_txt
-        document.querySelector('#date5').textContent = data.list[32].dt_txt
+        document.querySelector('#date1').textContent = data.list[4].dt_txt
+        document.querySelector('#date2').textContent = data.list[12].dt_txt
+        document.querySelector('#date3').textContent = data.list[20].dt_txt
+        document.querySelector('#date4').textContent = data.list[28].dt_txt
+        document.querySelector('#date5').textContent = data.list[36].dt_txt
 
-        document.querySelector('#wind1').textContent = data.list[0].wind.speed
-        document.querySelector('#wind2').textContent = data.list[8].wind.speed
-        document.querySelector('#wind3').textContent = data.list[16].wind.speed
-        document.querySelector('#wind4').textContent = data.list[24].wind.speed
-        document.querySelector('#wind5').textContent = data.list[32].wind.speed
+        document.querySelector('#wind1').textContent = data.list[4].wind.speed + "mph";
+        document.querySelector('#wind2').textContent = data.list[12].wind.speed + "mph";
+        document.querySelector('#wind3').textContent = data.list[20].wind.speed + "mph";
+        document.querySelector('#wind4').textContent = data.list[28].wind.speed + "mph";
+        document.querySelector('#wind5').textContent = data.list[36].wind.speed + "mph";
 
-        document.querySelector('#humidity1').textContent = data.list[0].main.humidity
-        document.querySelector('#humidity2').textContent = data.list[8].main.humidity
-        document.querySelector('#humidity3').textContent = data.list[16].main.humidity
-        document.querySelector('#humidity4').textContent = data.list[24].main.humidity
-        document.querySelector('#humidity5').textContent = data.list[32].main.humidity
+        document.querySelector('#humidity1').textContent = data.list[4].main.humidity + "%";
+        document.querySelector('#humidity2').textContent = data.list[12].main.humidity + "%";
+        document.querySelector('#humidity3').textContent = data.list[20].main.humidity + "%";
+        document.querySelector('#humidity4').textContent = data.list[28].main.humidity + "%";
+        document.querySelector('#humidity5').textContent = data.list[36].main.humidity + "%";
 
 
     })
 }
 
 searchBtn.addEventListener('click', callCity)
-
 document.querySelector('#hist1').addEventListener('click', recallCity1)
 document.querySelector('#hist2').addEventListener('click', recallCity2)
 document.querySelector('#hist3').addEventListener('click', recallCity3)

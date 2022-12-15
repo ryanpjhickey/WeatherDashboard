@@ -1,3 +1,17 @@
 /* #hide {
   visibility: hidden;
 } */
+
+img {
+  max-height: 100px;
+  max-width: 100px;
+}
+
+/* #weather1 {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+#searchBtn {
+  color: red;
+} */
