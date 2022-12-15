@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="UTF-8" lang="en" />
-    <link src="style.css" type="stylesheet" />
+    <link src="./assets/style.css" type="stylesheet" />
     <title>Weather Dashboard</title>
   </head>
   <body>
@@ -15,20 +15,92 @@
 
     <button id="searchBtn">Search</button>
 
-    <div id="currentCity"></div>
-    <div id="5day"></div>
-    <div id="hist"></div>
     <h1>
-      <div id="date1"></div>
-      <ul id="time1"></ul>
-      <div id="date2"></div>
-      <ul id="time2"></ul>
-      <div id="date3"></div>
-      <ul id="time3"></ul>
-      <div id="date4"></div>
-      <ul id="time4"></ul>
-      <div id="date5"></div>
-      <ul id="time5"></ul>
+      <h1 id="cityName"></h1>
+      <div id="date1">Day 1</div>
+      <ul class="hide">
+        Temperature:
+        <span id="time1"></span>
+      </ul>
+      <ul>
+        Humiditiy:
+        <span id="humidity1"></span>
+      </ul>
+      <ul>
+        Wind Speed:
+        <span id="wind1"></span>
+      </ul>
+      <ul>
+        Weather:
+        <img id="weather1" />
+      </ul>
+      <div id="date2">Day 2</div>
+      <ul class="hide">
+        Temperature:
+        <span id="time2"></span>
+      </ul>
+      <ul>
+        Humiditiy:
+        <span id="humidity2"></span>
+      </ul>
+      <ul>
+        Wind Speed:
+        <span id="wind2"></span>
+      </ul>
+      <ul>
+        Weather:
+        <img id="weather2" />
+      </ul>
+      <div id="date3">Day 3</div>
+      <ul class="hide">
+        Temperature:
+        <span id="time3"></span>
+      </ul>
+      <ul>
+        Humiditiy:
+        <span id="humidity3"></span>
+      </ul>
+      <ul>
+        Wind Speed:
+        <span id="wind3"></span>
+      </ul>
+      <ul>
+        Weather:
+        <img id="weather3" />
+      </ul>
+      <div id="date4">Day 4</div>
+      <ul class="hide">
+        Temperature:
+        <span id="time4"></span>
+      </ul>
+      <ul>
+        Humiditiy:
+        <span id="humidity4"></span>
+      </ul>
+      <ul>
+        Wind Speed:
+        <span id="wind4"></span>
+      </ul>
+      <ul>
+        Weather:
+        <img id="weather4" />
+      </ul>
+      <div id="date5">Day 5</div>
+      <ul class="hide">
+        Temperature:<span id="time5"></span>
+      </ul>
+      <ul>
+        Humiditiy:
+        <span id="humidity5"></span>
+      </ul>
+      <ul>
+        Wind Speed:
+        <span id="wind5"></span>
+      </ul>
+      <ul>
+        Weather:
+        <img id="weather5" />
+      </ul>
     </h1>
   </body>
   <script

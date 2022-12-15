@@ -16,6 +16,7 @@ function callCity() {
     }).then(function (data) {
         console.log(data)
         latlon(data.coord.lat, data.coord.lon)
+        document.querySelector('#hero').classList.remove("hidden")
     })
 }
 
@@ -41,19 +42,41 @@ function latlon(lat, lon) {
         var string4 = temp4.toFixed(1)
         var string5 = temp5.toFixed(1)
 
+        var CityName = data.city.name
+
+        document.querySelector('#cityName').textContent = CityName
+
+        //if data.list[0].weather[0].main = "Clouds" display cloud
+        //if data.list[0].weather[0].main = "Rain" display rain
+        //if data.list[0].weather[0].main = "Clear" display clear
 
 
-        document.querySelector('#time1').textContent = string1
-        document.querySelector('#time2').textContent = string2
-        document.querySelector('#time3').textContent = string3
-        document.querySelector('#time4').textContent = string4
-        document.querySelector('#time5').textContent = string5
+
+
+
+        document.querySelector('#time1').textContent = string1 + "F";
+        document.querySelector('#time2').textContent = string2 + "F";
+        document.querySelector('#time3').textContent = string3 + "F";
+        document.querySelector('#time4').textContent = string4 + "F";
+        document.querySelector('#time5').textContent = string5 + "F";
 
         document.querySelector('#date1').textContent = data.list[0].dt_txt
         document.querySelector('#date2').textContent = data.list[8].dt_txt
         document.querySelector('#date3').textContent = data.list[16].dt_txt
         document.querySelector('#date4').textContent = data.list[24].dt_txt
         document.querySelector('#date5').textContent = data.list[32].dt_txt
+
+        document.querySelector('#wind1').textContent = data.list[0].wind.speed
+        document.querySelector('#wind2').textContent = data.list[8].wind.speed
+        document.querySelector('#wind3').textContent = data.list[16].wind.speed
+        document.querySelector('#wind4').textContent = data.list[24].wind.speed
+        document.querySelector('#wind5').textContent = data.list[32].wind.speed
+
+        document.querySelector('#humidity1').textContent = data.list[0].main.humidity
+        document.querySelector('#humidity2').textContent = data.list[8].main.humidity
+        document.querySelector('#humidity3').textContent = data.list[16].main.humidity
+        document.querySelector('#humidity4').textContent = data.list[24].main.humidity
+        document.querySelector('#humidity5').textContent = data.list[32].main.humidity
 
 
     })
