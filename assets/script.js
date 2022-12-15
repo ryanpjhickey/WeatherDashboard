@@ -42,11 +42,20 @@ function latlon(lat, lon) {
         var string5 = temp5.toFixed(1)
 
 
+
         document.querySelector('#time1').textContent = string1
         document.querySelector('#time2').textContent = string2
         document.querySelector('#time3').textContent = string3
         document.querySelector('#time4').textContent = string4
         document.querySelector('#time5').textContent = string5
+
+        document.querySelector('#date1').textContent = data.list[0].dt_txt
+        document.querySelector('#date2').textContent = data.list[8].dt_txt
+        document.querySelector('#date3').textContent = data.list[16].dt_txt
+        document.querySelector('#date4').textContent = data.list[24].dt_txt
+        document.querySelector('#date5').textContent = data.list[32].dt_txt
+
+
     })
 }
 
