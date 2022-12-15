@@ -5,6 +5,7 @@ var searchBtn = document.querySelector('#searchBtn')
 var APIkey = `d22455c31574a84b22d1c94f4c33f19c`
 
 var cityName = document.querySelector('#searchCity')
+var counter = 0
 
 function callCity() {
     let finalApi = api + cityName.value.trim()
@@ -16,7 +17,7 @@ function callCity() {
     }).then(function (data) {
         console.log(data)
         latlon(data.coord.lat, data.coord.lon)
-        document.querySelector('#hero').classList.remove("hidden")
+        // document.querySelector('#hero').classList.remove("hidden")
     })
 }
 
@@ -29,6 +30,7 @@ function latlon(lat, lon) {
         }
         throw response;
     }).then(function (data) {
+        counter++;
         console.log(data)
         var temp1 = ((data.list[0].main.temp - 273.15) * 1.8) + 32;
         var temp2 = ((data.list[8].main.temp - 273.15) * 1.8) + 32;
@@ -45,6 +47,13 @@ function latlon(lat, lon) {
         var CityName = data.city.name
 
         document.querySelector('#cityName').textContent = CityName
+
+        var newDiv = document.createElement('button')
+        var saveCity = document.createTextNode(CityName)
+
+        newDiv.appendChild(saveCity);
+        newDiv.id = counter;
+        document.querySelector('#hist').appendChild(newDiv);
 
         //if data.list[0].weather[0].main = "Clouds" display cloud
         //if data.list[0].weather[0].main = "Rain" display rain
@@ -84,6 +93,81 @@ function latlon(lat, lon) {
 
 searchBtn.addEventListener('click', callCity)
 
+document.querySelector('#1').addEventListener('click', recallCity1)
+document.querySelector('#2').addEventListener('click', recallCity2)
+document.querySelector('#3').addEventListener('click', recallCity3)
+document.querySelector('#4').addEventListener('click', recallCity4)
+document.querySelector('#5').addEventListener('click', recallCity5)
+
+function recallCity1() {
+    let finalApi = api + document.querySelector('#1').textContent
+    fetch(finalApi).then(function (response) {
+        if (response.ok) {
+            return response.json();
+        }
+        throw response;
+    }).then(function (data) {
+        console.log(data)
+        latlon(data.coord.lat, data.coord.lon)
+        // document.querySelector('#hero').classList.remove("hidden")
+    })
+}
+
+function recallCity2() {
+    let finalApi = api + document.querySelector('#2').textContent
+    fetch(finalApi).then(function (response) {
+        if (response.ok) {
+            return response.json();
+        }
+        throw response;
+    }).then(function (data) {
+        console.log(data)
+        latlon(data.coord.lat, data.coord.lon)
+        // document.querySelector('#hero').classList.remove("hidden")
+    })
+}
+
+function recallCity3() {
+    let finalApi = api + document.querySelector('#3').textContent
+    fetch(finalApi).then(function (response) {
+        if (response.ok) {
+            return response.json();
+        }
+        throw response;
+    }).then(function (data) {
+        console.log(data)
+        latlon(data.coord.lat, data.coord.lon)
+        // document.querySelector('#hero').classList.remove("hidden")
+    })
+}
+
+function recallCity4() {
+    let finalApi = api + document.querySelector('#4').textContent
+    fetch(finalApi).then(function (response) {
+        if (response.ok) {
+            return response.json();
+        }
+        throw response;
+    }).then(function (data) {
+        console.log(data)
+        latlon(data.coord.lat, data.coord.lon)
+        // document.querySelector('#hero').classList.remove("hidden")
+    })
+}
+
+function recallCity5() {
+    let finalApi = api + document.querySelector('#5').textContent
+    fetch(finalApi).then(function (response) {
+        if (response.ok) {
+            return response.json();
+        }
+        throw response;
+    }).then(function (data) {
+        console.log(data)
+        latlon(data.coord.lat, data.coord.lon)
+        // document.querySelector('#hero').classList.remove("hidden")
+    })
+}
 
 // latlon(38.4666, -121.3177) [SAC COORDS]
 // 38.4666
