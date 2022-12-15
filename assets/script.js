@@ -24,13 +24,13 @@ function callCity() {
 function latlon(lat, lon) {
     var coordapi = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${APIkey}
     `
+    counter++;
     fetch(coordapi).then(function (response) {
         if (response.ok) {
             return response.json();
         }
         throw response;
     }).then(function (data) {
-        counter++;
         console.log(data)
         var temp1 = ((data.list[0].main.temp - 273.15) * 1.8) + 32;
         var temp2 = ((data.list[8].main.temp - 273.15) * 1.8) + 32;
@@ -48,12 +48,7 @@ function latlon(lat, lon) {
 
         document.querySelector('#cityName').textContent = CityName
 
-        var newDiv = document.createElement('button')
-        var saveCity = document.createTextNode(CityName)
-
-        newDiv.appendChild(saveCity);
-        newDiv.id = counter;
-        document.querySelector('#hist').appendChild(newDiv);
+        document.querySelector(`#hist${counter}`).textContent = CityName
 
         //if data.list[0].weather[0].main = "Clouds" display cloud
         //if data.list[0].weather[0].main = "Rain" display rain
@@ -93,14 +88,14 @@ function latlon(lat, lon) {
 
 searchBtn.addEventListener('click', callCity)
 
-document.querySelector('#1').addEventListener('click', recallCity1)
-document.querySelector('#2').addEventListener('click', recallCity2)
-document.querySelector('#3').addEventListener('click', recallCity3)
-document.querySelector('#4').addEventListener('click', recallCity4)
-document.querySelector('#5').addEventListener('click', recallCity5)
+document.querySelector('#hist1').addEventListener('click', recallCity1)
+document.querySelector('#hist2').addEventListener('click', recallCity2)
+document.querySelector('#hist3').addEventListener('click', recallCity3)
+document.querySelector('#hist4').addEventListener('click', recallCity4)
+document.querySelector('#hist5').addEventListener('click', recallCity5)
 
 function recallCity1() {
-    let finalApi = api + document.querySelector('#1').textContent
+    let finalApi = api + document.querySelector('#hist1').textContent
     fetch(finalApi).then(function (response) {
         if (response.ok) {
             return response.json();
@@ -114,7 +109,7 @@ function recallCity1() {
 }
 
 function recallCity2() {
-    let finalApi = api + document.querySelector('#2').textContent
+    let finalApi = api + document.querySelector('#hist2').textContent
     fetch(finalApi).then(function (response) {
         if (response.ok) {
             return response.json();
@@ -128,7 +123,7 @@ function recallCity2() {
 }
 
 function recallCity3() {
-    let finalApi = api + document.querySelector('#3').textContent
+    let finalApi = api + document.querySelector('#hist3').textContent
     fetch(finalApi).then(function (response) {
         if (response.ok) {
             return response.json();
@@ -142,7 +137,7 @@ function recallCity3() {
 }
 
 function recallCity4() {
-    let finalApi = api + document.querySelector('#4').textContent
+    let finalApi = api + document.querySelector('#hist4').textContent
     fetch(finalApi).then(function (response) {
         if (response.ok) {
             return response.json();
@@ -156,7 +151,7 @@ function recallCity4() {
 }
 
 function recallCity5() {
-    let finalApi = api + document.querySelector('#5').textContent
+    let finalApi = api + document.querySelector('#hist5').textContent
     fetch(finalApi).then(function (response) {
         if (response.ok) {
             return response.json();
