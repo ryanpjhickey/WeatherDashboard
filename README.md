@@ -19,7 +19,7 @@ This is a WeatherDashboard app that allows a user to find out weather conditions
 ## Technologies
 
 <p float="left">
-<img src="https://cdn-icons-png.flaticon.com/512/919/919827.png" width="100" height="100">
+<img src="https://cdn-icons-png.flaticon.com/512/5968/5968267.png" width="100" height="100">
 <img src="https://cdn-icons-png.flaticon.com/512/5968/5968242.png" width="100" height="100">
 <img src="https://cdn.iconscout.com/icon/free/png-256/javascript-2038874-1720087.png" width="100" height="100">
 <img src="https://openweathermap.org/themes/openweathermap/assets/img/mobile_app/android-app-top-banner.png" width="100" height="100">
